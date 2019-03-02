@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="no_result_margin_top">50dp</dimen>
+    <dimen name="text_20">20sp</dimen>
+    <dimen name="main_item_height">150dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="icon_size">30dp</dimen>
+    <dimen name="icon_big_size">100dp</dimen>
+</resources>
