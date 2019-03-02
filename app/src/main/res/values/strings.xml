@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Simple</string>
+    <string name="no_result">No Result</string>
+    <string name="city">City:\n</string>
+    <string name="date_from">Date from:\n</string>
+    <string name="date_to">Date to:\n</string>
+    <string name="filter">Filter</string>
+</resources>

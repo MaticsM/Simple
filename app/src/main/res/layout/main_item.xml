@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="data"
+                type="hu.mark.simple.screens.main.items.MainItemViewModel"/>
+
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_margin="@dimen/margin_10"
+            android:padding="@dimen/margin_10">
+
+        <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="@dimen/margin_20"
+                bind:showImageFromUrl="@{data.itemData.icon}"/>
+
+        <LinearLayout
+                android:id="@+id/ll_categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/item_image"
+                android:layout_marginEnd="@dimen/margin_10"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/city"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:textStyle="bold"
+                    android:text="@string/date_from"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:textStyle="bold"
+                    android:text="@string/date_to"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ll_categories"
+                android:layout_toStartOf="@+id/item_info"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.itemData.name}"
+                    android:lines="2"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@{data.itemData.startDate}"
+                    android:lines="2"
+                    android:ellipsize="end"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@{data.itemData.endDate}"
+                    android:lines="2"
+                    android:ellipsize="end"/>
+        </LinearLayout>
+
+        <ImageView
+                android:id="@+id/item_info"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/margin_10"
+                android:src="@android:drawable/ic_menu_info_details"
+                android:onClick="@{data::onInfoClick}"/>
+
+        <ImageView
+                android:id="@+id/item_favourite"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_below="@+id/item_info"
+                android:onClick="@{data::onFavouriteClick}"
+                bind:setFavourite="@{data.favourite}"/>
+
+    </RelativeLayout>
+</layout>
